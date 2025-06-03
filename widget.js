@@ -8,7 +8,7 @@ document.head.appendChild(fontLink);
 // Tambahkan Tailwind CSS ke <head>
 const tailwindLink = document.createElement('link');
 tailwindLink.rel = 'stylesheet';
-tailwindLink.href = '/src/output.css';
+tailwindLink.href = '/widget-baru/src/output.css';
 document.head.appendChild(tailwindLink);
 
 const customStyle = document.createElement('style');
@@ -59,15 +59,15 @@ const translations = {
     buttonText: "Lanjut",
     gridItems: {
       sultan: [
-        { name: "Fashagriya<br> Cluster", url: "https://www.podomoropark.com/id/cluster/fashagriya", img: "/src/img/fashagriya.png" }, 
-        { name: "Wangsagriya<br> Cluster", url: "https://www.podomoropark.com/id/cluster/wangsagriya", img: "/src/img/wangsagriya.png" },
-        { name: "Padmagriya<br> Cluster", url: "https://www.podomoropark.com/id/cluster/padmagriya", img: "/src/img/padmagriya.png" },
-        { name: "Sadyagriya<br> Cluster", url: "https://www.podomoropark.com/id/cluster/sadyagriya", img: "/src/img/sadyagriya.png" }
+        { name: "Fashagriya<br> Cluster", url: "https://www.podomoropark.com/id/cluster/fashagriya", img: "/widget-baru/src/img/fashagriya.png" }, 
+        { name: "Wangsagriya<br> Cluster", url: "https://www.podomoropark.com/id/cluster/wangsagriya", img: "/widget-baru/src/img/wangsagriya.png" },
+        { name: "Padmagriya<br> Cluster", url: "https://www.podomoropark.com/id/cluster/padmagriya", img: "/widget-baru/src/img/padmagriya.png" },
+        { name: "Sadyagriya<br> Cluster", url: "https://www.podomoropark.com/id/cluster/sadyagriya", img: "/widget-baru/src/img/sadyagriya.png" }
       ],
       investasi: [
-        { name: "Neo Plaza", url: "https://www.podomoropark.com/id/ruko", img: "/src/img/neoplaza.png" },
-        { name: "La Plaza", url: "https://www.podomoropark.com/id/laplaza", img: "/src/img/laplaza.png" },
-        { name: "Student<br> House", url: "https://www.podomoropark.com/id/cluster/naragriya", img: "/src/img/studenthouse.png" }
+        { name: "Neo Plaza", url: "https://www.podomoropark.com/id/ruko", img: "/widget-baru/src/img/neoplaza.png" },
+        { name: "La Plaza", url: "https://www.podomoropark.com/id/laplaza", img: "/widget-baru/src/img/laplaza.png" },
+        { name: "Student<br> House", url: "https://www.podomoropark.com/id/cluster/naragriya", img: "/widget-baru/src/img/studenthouse.png" }
       ]
     }
   },
@@ -76,15 +76,15 @@ const translations = {
                 buttonText: "Go",
                 gridItems: {
                     sultan: [
-                        { name: "Fashagriya<br> Cluster", url: "https://www.podomoropark.com/en/cluster/fashagriya", img: "/src/img/fashagriya.png" }, 
-                        { name: "Wangsagriya<br> Cluster", url: "https://www.podomoropark.com/en/cluster/wangsagriya", img: "/src/img/wangsagriya.png" },
-                        { name: "Padmagriya<br> Cluster", url: "https://www.podomoropark.com/en/cluster/padmagriya", img: "/src/img/padmagriya.png" },
-                        { name: "Sadyagriya<br> Cluster", url: "https://www.podomoropark.com/en/cluster/sadyagriya", img: "/src/img/sadyagriya.png" }
+                        { name: "Fashagriya<br> Cluster", url: "https://www.podomoropark.com/en/cluster/fashagriya", img: "/widget-baru/src/img/fashagriya.png" }, 
+                        { name: "Wangsagriya<br> Cluster", url: "https://www.podomoropark.com/en/cluster/wangsagriya", img: "/widget-baru/src/img/wangsagriya.png" },
+                        { name: "Padmagriya<br> Cluster", url: "https://www.podomoropark.com/en/cluster/padmagriya", img: "/widget-baru/src/img/padmagriya.png" },
+                        { name: "Sadyagriya<br> Cluster", url: "https://www.podomoropark.com/en/cluster/sadyagriya", img: "/widget-baru/src/img/sadyagriya.png" }
                     ],
                     investasi: [
-                        { name: "Neo Plaza", url: "https://www.podomoropark.com/en/ruko", img: "/src/img/neoplaza.png" },
-                        { name: "La Plaza", url: "https://www.podomoropark.com/en/laplaza", img: "/src/img/laplaza.png" },
-                        { name: "Student<br> House", url: "https://www.podomoropark.com/en/cluster/naragriya", img: "/src/img/studenthouse.png" }
+                        { name: "Neo Plaza", url: "https://www.podomoropark.com/en/ruko", img: "/widget-baru/src/img/neoplaza.png" },
+                        { name: "La Plaza", url: "https://www.podomoropark.com/en/laplaza", img: "/widget-baru/src/img/laplaza.png" },
+                        { name: "Student<br> House", url: "https://www.podomoropark.com/en/cluster/naragriya", img: "/widget-baru/src/img/studenthouse.png" }
                     ]
                 }
             }
