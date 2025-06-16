@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+@tailwind utilities;
+
+/* Custom class dengan @apply */
+@layer utilities {
+  .widgetContainer{
+    @apply p-4 md:p-8;
+  }
+
+  .widgetContainer2{
+    @apply max-w-6xl mx-auto;
+  }
+
+  .optionContainer{
+    @apply mb-8;
+  }
+}

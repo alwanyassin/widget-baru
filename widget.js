@@ -8,7 +8,7 @@ document.head.appendChild(fontLink);
 // Tambahkan Tailwind CSS ke <head>
 const tailwindLink = document.createElement('link');
 tailwindLink.rel = 'stylesheet';
-tailwindLink.href = '/widget-baru/src/output.css';
+tailwindLink.href = '/src/output.css';
 document.head.appendChild(tailwindLink);
 
 const customStyle = document.createElement('style');
@@ -19,9 +19,12 @@ customStyle.textContent = `
   .scale-hover:hover {
     transform: scale(1.05);
   }
-                .gradient-bg {
-                background: linear-gradient(to bottom, #ffffff 0%, #f3f4f6 100%);
+            .gradient-bg {
+              background-image: -moz-linear-gradient( 90deg, rgb(255,255,255) 0%, rgb(233,236,238) 100%);
+              background-image: -webkit-linear-gradient( 90deg, rgb(255,255,255) 0%, rgb(233,236,238) 100%);
+              background-image: -ms-linear-gradient( 90deg, rgb(255,255,255) 0%, rgb(233,236,238) 100%);
             }
+
             .scrollbar-custom::-webkit-scrollbar {
                 display: none;
             }
@@ -106,27 +109,31 @@ function initWidget() {
 
   // Masukkan HTML ke dalam container
   container.innerHTML = `
-    <div class="font-josefin bg-gradient-to-b from-slate-50 to-slate-100 p-4 md:p-8">
-      <div class="max-w-6xl mx-auto">
-        <div class="mb-8">
+    <div class="font-josefin widgetContainer">
+      <div class="widgetContainer2">
+        <div class="optionContainer">
           <div class="flex flex-row gap-3">
             <div class="relative flex-1">
               <div class="relative" id="selectContainer">
                                 <!-- Trigger Button -->
                                 <button
                                     id="selectButton"
-                                    class="w-full flex items-center justify-between px-4 py-3 border border-gray-300 rounded-md shadow-sm text-left focus:outline-none transition-all gradient-bg"
+                                    class="h-12 relative z-20 w-full flex items-center justify-between px-4 py-3 border border-gray-300 rounded-2xl shadow-sm text-left focus:outline-none transition-all gradient-bg"
                                 >
                                     <span id="selectedValue" class="text-gray-700 text-sm font-medium">${data.selectPlaceholder}</span>
-                                    <svg id="dropdownIcon" class="w-5 h-5 text-gray-400 transform transition-transform duration-200" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                    <svg id="dropdownIcon" class=" text-gray-400 transform transition-transform duration-200"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                                    width="24.5px" height="12.5px">
+                                    <path fill-rule="evenodd"  stroke="rgb(10, 10, 10)" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" fill="none"
+                                    d="M1.529,1.475 L12.271,10.427 L23.013,1.475 "/>
                                     </svg>
                                 </button>
                                 
                                 <!-- Dropdown Options -->
                                 <div
                                     id="dropdownMenu"
-                                    class="absolute z-10 w-full mt-1 border border-gray-200 rounded-md shadow-lg overflow-hidden gradient-bg hidden"
+                                    class="absolute z-10 w-full mt-[-36px] border border-gray-200 rounded-2xl shadow-lg overflow-hidden gradient-bg hidden"
                                 >
                                     <!-- Options List -->
                                     <ul id="optionsList" class="overflow-y-auto scrollbar-custom">
@@ -135,9 +142,11 @@ function initWidget() {
                                 </div>
                             </div>
             </div>
-            <button id="go" class="h-12 px-6 bg-[#08594c] hover:bg-emerald-700 text-white rounded-lg shadow-lg transition-all duration-200 hover:shadow-lg font-medium">
-              <svg class="w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="m21 21-3.5-3.5M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z"/>
+            <button id="go" class="h-12 px-6 bg-[#08594c] hover:bg-emerald-700 text-white rounded-2xl shadow-lg transition-all duration-200 hover:shadow-lg font-medium">
+              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32px" height="32px" viewBox="0 0 24 24" version="1.1">
+                <g id="surface1">
+                <path style="fill:none;stroke-width:36;stroke-linecap:round;stroke-linejoin:miter;stroke:#fff;stroke-opacity:1;stroke-miterlimit:4;" d="M 280.011393 278.017578 C 339.02832 217.884115 338.310547 121.383464 278.496094 62.127279 C 218.681641 2.871094 122.18099 3.110352 62.605794 62.605794 C 3.110352 122.18099 2.871094 218.681641 62.127279 278.496094 C 121.383464 338.310547 217.884115 339.02832 278.017578 280.011393 L 447.970378 449.964193 M 356.972656 332.967122 L 467.03125 443.025716 L 441.031901 469.025065 L 330.973307 358.966471 " transform="matrix(0.0489796,0,0,0.0489796,0,0)"/>
+                </g>
               </svg>
             </button>
           </div>
@@ -203,6 +212,7 @@ document.body.appendChild(flowbiteJS);
             // Data
             if(lang == 'id'){
               options = [
+                  { id: 1, name: "Opsi", value: "url:https://www.podomoropark.com/id/cluster/brahmapuri", disabled: true},
                   { id: 2, name: "Kemewahan Yang Terjangkau", value: "url:https://www.podomoropark.com/id/cluster/brahmapuri" },
                   { id: 3, name: "Rumah Harga < 1 Milliar", value: "url:https://www.podomoropark.com/id/cluster/patragriya" },
                   { id: 4, name: "Rumah Harga > 1 Milliar", value: "grid:sultan" },
@@ -215,6 +225,7 @@ document.body.appendChild(flowbiteJS);
               ];
             } else if(lang == 'en') {
               options = [
+                  { id: 1, name: "Opsi", value: "url:https://www.podomoropark.com/id/cluster/brahmapuri", disabled: true},
                   { id: 2, name: "Luxuriously Affordable", value: "url:https://www.podomoropark.com/en/cluster/brahmapuri" },
                   { id: 3, name: "Homes < 1 Billion", value: "url:https://www.podomoropark.com/en/cluster/patragriya" },
                   { id: 4, name: "Homes > 1 Billion", value: "grid:sultan" },
@@ -227,6 +238,7 @@ document.body.appendChild(flowbiteJS);
               ];
             } else {
               options = [
+                  { id: 1, name: "Opsi", value: "url:https://www.podomoropark.com/id/cluster/brahmapuri", disabled: true},
                   { id: 2, name: "Kemewahan Yang Terjangkau", value: "url:https://www.podomoropark.com/id/cluster/brahmapuri" },
                   { id: 3, name: "Rumah Harga < 1 Milliar", value: "url:https://www.podomoropark.com/id/cluster/patragriya" },
                   { id: 4, name: "Rumah Harga > 1 Milliar", value: "grid:sultan" },
@@ -259,7 +271,7 @@ document.body.appendChild(flowbiteJS);
                 options.forEach(option => {
                     const li = document.createElement('li');
                     li.className = `px-4 py-2.5 text-sm transition-colors duration-150 ${
-                        option.disabled ? 'text-gray-400 cursor-default' : 'hover:bg-gray-300 cursor-pointer'
+                        option.disabled ? 'text-gray-400 cursor-default' : 'hover:bg-gradient-to-b from-[#a6a6a6] to-[#cccccc] cursor-pointer'
                     } ${
                         selectedOptionGlobal && selectedOptionGlobal.id === option.id ? 'bg-blue-50' : ''
                     }`;
