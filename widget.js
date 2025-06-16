@@ -62,15 +62,15 @@ const translations = {
     buttonText: "Lanjut",
     gridItems: {
       sultan: [
-        { name: "Fashagriya<br> Cluster", url: "https://www.podomoropark.com/id/cluster/fashagriya", img: "/widget-baru/src/img/fashagriya.png" }, 
-        { name: "Wangsagriya<br> Cluster", url: "https://www.podomoropark.com/id/cluster/wangsagriya", img: "/widget-baru/src/img/wangsagriya.png" },
-        { name: "Padmagriya<br> Cluster", url: "https://www.podomoropark.com/id/cluster/padmagriya", img: "/widget-baru/src/img/padmagriya.png" },
-        { name: "Sadyagriya<br> Cluster", url: "https://www.podomoropark.com/id/cluster/sadyagriya", img: "/widget-baru/src/img/sadyagriya.png" }
+        { name: "Fashagriya<br> Cluster", url: "https://www.podomoropark.com/id/cluster/fashagriya", img: "/src/img/fashagriya.png" }, 
+        { name: "Wangsagriya<br> Cluster", url: "https://www.podomoropark.com/id/cluster/wangsagriya", img: "/src/img/wangsagriya.png" },
+        { name: "Padmagriya<br> Cluster", url: "https://www.podomoropark.com/id/cluster/padmagriya", img: "/src/img/padmagriya.png" },
+        { name: "Sadyagriya<br> Cluster", url: "https://www.podomoropark.com/id/cluster/sadyagriya", img: "/src/img/sadyagriya.png" }
       ],
       investasi: [
-        { name: "Neo Plaza", url: "https://www.podomoropark.com/id/ruko", img: "/widget-baru/src/img/neoplaza.png" },
-        { name: "La Plaza", url: "https://www.podomoropark.com/id/laplaza", img: "/widget-baru/src/img/laplaza.png" },
-        { name: "Student<br> House", url: "https://www.podomoropark.com/id/cluster/naragriya", img: "/widget-baru/src/img/studenthouse.png" }
+        { name: "Neo Plaza", url: "https://www.podomoropark.com/id/ruko", img: "/src/img/neoplaza.png" },
+        { name: "La Plaza", url: "https://www.podomoropark.com/id/laplaza", img: "/src/img/laplaza.png" },
+        { name: "Student<br> House", url: "https://www.podomoropark.com/id/cluster/naragriya", img: "/src/img/studenthouse.png" }
       ]
     }
   },
@@ -79,15 +79,15 @@ const translations = {
                 buttonText: "Go",
                 gridItems: {
                     sultan: [
-                        { name: "Fashagriya<br> Cluster", url: "https://www.podomoropark.com/en/cluster/fashagriya", img: "/widget-baru/src/img/fashagriya.png" }, 
-                        { name: "Wangsagriya<br> Cluster", url: "https://www.podomoropark.com/en/cluster/wangsagriya", img: "/widget-baru/src/img/wangsagriya.png" },
-                        { name: "Padmagriya<br> Cluster", url: "https://www.podomoropark.com/en/cluster/padmagriya", img: "/widget-baru/src/img/padmagriya.png" },
-                        { name: "Sadyagriya<br> Cluster", url: "https://www.podomoropark.com/en/cluster/sadyagriya", img: "/widget-baru/src/img/sadyagriya.png" }
+                        { name: "Fashagriya<br> Cluster", url: "https://www.podomoropark.com/en/cluster/fashagriya", img: "/src/img/fashagriya.png" }, 
+                        { name: "Wangsagriya<br> Cluster", url: "https://www.podomoropark.com/en/cluster/wangsagriya", img: "/src/img/wangsagriya.png" },
+                        { name: "Padmagriya<br> Cluster", url: "https://www.podomoropark.com/en/cluster/padmagriya", img: "/src/img/padmagriya.png" },
+                        { name: "Sadyagriya<br> Cluster", url: "https://www.podomoropark.com/en/cluster/sadyagriya", img: "/src/img/sadyagriya.png" }
                     ],
                     investasi: [
-                        { name: "Neo Plaza", url: "https://www.podomoropark.com/en/ruko", img: "/widget-baru/src/img/neoplaza.png" },
-                        { name: "La Plaza", url: "https://www.podomoropark.com/en/laplaza", img: "/widget-baru/src/img/laplaza.png" },
-                        { name: "Student<br> House", url: "https://www.podomoropark.com/en/cluster/naragriya", img: "/widget-baru/src/img/studenthouse.png" }
+                        { name: "Neo Plaza", url: "https://www.podomoropark.com/en/ruko", img: "/src/img/neoplaza.png" },
+                        { name: "La Plaza", url: "https://www.podomoropark.com/en/laplaza", img: "/src/img/laplaza.png" },
+                        { name: "Student<br> House", url: "https://www.podomoropark.com/en/cluster/naragriya", img: "/src/img/studenthouse.png" }
                     ]
                 }
             }
@@ -109,19 +109,19 @@ function initWidget() {
 
   // Masukkan HTML ke dalam container
   container.innerHTML = `
-    <div class="font-josefin widgetContainer">
+    <div class="widgetContainer">
       <div class="widgetContainer2">
         <div class="optionContainer">
-          <div class="flex flex-row gap-3">
-            <div class="relative flex-1">
+          <div class="optionContainer2">
+            <div class="dropdownContainer">
               <div class="relative" id="selectContainer">
                                 <!-- Trigger Button -->
                                 <button
                                     id="selectButton"
-                                    class="h-12 relative z-20 w-full flex items-center justify-between px-4 py-3 border border-gray-300 rounded-2xl shadow-sm text-left focus:outline-none transition-all gradient-bg"
+                                    class="dropdownButton gradient-bg"
                                 >
-                                    <span id="selectedValue" class="text-gray-700 text-sm font-medium">${data.selectPlaceholder}</span>
-                                    <svg id="dropdownIcon" class=" text-gray-400 transform transition-transform duration-200"
+                                    <span id="selectedValue" class="dropdownButtonPlaceholder">${data.selectPlaceholder}</span>
+                                    <svg id="dropdownIcon" class="dropdownButtonIcon"
                                     xmlns="http://www.w3.org/2000/svg"
                                     xmlns:xlink="http://www.w3.org/1999/xlink"
                                     width="24.5px" height="12.5px">
@@ -133,16 +133,16 @@ function initWidget() {
                                 <!-- Dropdown Options -->
                                 <div
                                     id="dropdownMenu"
-                                    class="absolute z-10 w-full mt-[-36px] border border-gray-200 rounded-2xl shadow-lg overflow-hidden gradient-bg hidden"
+                                    class="dropdownOptionContainer gradient-bg hidden"
                                 >
                                     <!-- Options List -->
-                                    <ul id="optionsList" class="overflow-y-auto scrollbar-custom">
+                                    <ul id="optionsList" class="dropdownListContainer scrollbar-custom">
                                         <!-- Options will be inserted here by JavaScript -->
                                     </ul>
                                 </div>
                             </div>
             </div>
-            <button id="go" class="h-12 px-6 bg-[#08594c] hover:bg-emerald-700 text-white rounded-2xl shadow-lg transition-all duration-200 hover:shadow-lg font-medium">
+            <button id="go" class="widgetSearchButton">
               <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32px" height="32px" viewBox="0 0 24 24" version="1.1">
                 <g id="surface1">
                 <path style="fill:none;stroke-width:36;stroke-linecap:round;stroke-linejoin:miter;stroke:#fff;stroke-opacity:1;stroke-miterlimit:4;" d="M 280.011393 278.017578 C 339.02832 217.884115 338.310547 121.383464 278.496094 62.127279 C 218.681641 2.871094 122.18099 3.110352 62.605794 62.605794 C 3.110352 122.18099 2.871094 218.681641 62.127279 278.496094 C 121.383464 338.310547 217.884115 339.02832 278.017578 280.011393 L 447.970378 449.964193 M 356.972656 332.967122 L 467.03125 443.025716 L 441.031901 469.025065 L 330.973307 358.966471 " transform="matrix(0.0489796,0,0,0.0489796,0,0)"/>
@@ -151,8 +151,8 @@ function initWidget() {
             </button>
           </div>
         </div>
-        <div id="grid-container" class="hidden mx-auto">
-          <div class="flex flex-wrap justify-center gap-6 mb-16" id="grid-content"></div>
+        <div id="grid-container" class="widgetGridContainer hidden">
+          <div class="widgetGridContent" id="grid-content"></div>
         </div>
       </div>
     </div>
@@ -173,14 +173,14 @@ function initWidget() {
       grid.innerHTML = '';
       translations[lang].gridItems[type].forEach(item => {
         const div = document.createElement('div');
-        div.className = 'w-full md:w-[calc(50%-12px)] max-w-md';
+        div.className = 'widgetGridItemContainer';
         div.innerHTML = `
-          <div class="rounded-xl overflow-hidden flex shadow-lg cursor-pointer scale-hover">
-            <div class="bg-gradient-to-t from-[#308377] to-[#286E63] text-white p-6 flex flex-col justify-center min-w-[180px]">
-              <h3 class="text-xl font-bold">${item.name}</h3>
+          <div class="widgetGridItem scale-hover">
+            <div class="widgetGridItemLeft">
+              <h3 class="widgetGridItemText">${item.name}</h3>
             </div>
-            <div class="flex-grow h-[110px]">
-              <img src="${item.img}" alt="${item.name}" class="w-full h-full object-cover" />
+            <div class="widgetGridItemRight">
+              <img src="${item.img}" alt="${item.name}" class="widgetGridItemImage" />
             </div>
           </div>
         `;
@@ -197,14 +197,14 @@ function initWidget() {
 initWidget();
 
 // Tambahkan Flowbite CSS dan JS setelah widget di-load
-const flowbiteCSS = document.createElement('link');
-flowbiteCSS.rel = 'stylesheet';
-flowbiteCSS.href = 'https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css';
-document.head.appendChild(flowbiteCSS);
+// const flowbiteCSS = document.createElement('link');
+// flowbiteCSS.rel = 'stylesheet';
+// flowbiteCSS.href = 'https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css';
+// document.head.appendChild(flowbiteCSS);
 
-const flowbiteJS = document.createElement('script');
-flowbiteJS.src = 'https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js';
-document.body.appendChild(flowbiteJS);
+// const flowbiteJS = document.createElement('script');
+// flowbiteJS.src = 'https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js';
+// document.body.appendChild(flowbiteJS);
 
         document.addEventListener('DOMContentLoaded', function() {
             const lang = getLanguageFromURL();
@@ -212,7 +212,7 @@ document.body.appendChild(flowbiteJS);
             // Data
             if(lang == 'id'){
               options = [
-                  { id: 1, name: "Opsi", value: "url:https://www.podomoropark.com/id/cluster/brahmapuri", disabled: true},
+                  { id: 1, name: "-", value: "url:#", disabled: true},
                   { id: 2, name: "Kemewahan Yang Terjangkau", value: "url:https://www.podomoropark.com/id/cluster/brahmapuri" },
                   { id: 3, name: "Rumah Harga < 1 Milliar", value: "url:https://www.podomoropark.com/id/cluster/patragriya" },
                   { id: 4, name: "Rumah Harga > 1 Milliar", value: "grid:sultan" },
@@ -225,7 +225,7 @@ document.body.appendChild(flowbiteJS);
               ];
             } else if(lang == 'en') {
               options = [
-                  { id: 1, name: "Opsi", value: "url:https://www.podomoropark.com/id/cluster/brahmapuri", disabled: true},
+                  { id: 1, name: "-", value: "url:#", disabled: true},
                   { id: 2, name: "Luxuriously Affordable", value: "url:https://www.podomoropark.com/en/cluster/brahmapuri" },
                   { id: 3, name: "Homes < 1 Billion", value: "url:https://www.podomoropark.com/en/cluster/patragriya" },
                   { id: 4, name: "Homes > 1 Billion", value: "grid:sultan" },
@@ -238,7 +238,7 @@ document.body.appendChild(flowbiteJS);
               ];
             } else {
               options = [
-                  { id: 1, name: "Opsi", value: "url:https://www.podomoropark.com/id/cluster/brahmapuri", disabled: true},
+                  { id: 1, name: "-", value: "url:#", disabled: true},
                   { id: 2, name: "Kemewahan Yang Terjangkau", value: "url:https://www.podomoropark.com/id/cluster/brahmapuri" },
                   { id: 3, name: "Rumah Harga < 1 Milliar", value: "url:https://www.podomoropark.com/id/cluster/patragriya" },
                   { id: 4, name: "Rumah Harga > 1 Milliar", value: "grid:sultan" },
@@ -270,10 +270,10 @@ document.body.appendChild(flowbiteJS);
                 
                 options.forEach(option => {
                     const li = document.createElement('li');
-                    li.className = `px-4 py-2.5 text-sm transition-colors duration-150 ${
-                        option.disabled ? 'text-gray-400 cursor-default' : 'hover:bg-gradient-to-b from-[#a6a6a6] to-[#cccccc] cursor-pointer'
+                    li.className = `dropdownList ${
+                        option.disabled ? 'dropdownListDisabled' : 'dropdownListHover'
                     } ${
-                        selectedOptionGlobal && selectedOptionGlobal.id === option.id ? 'bg-blue-50' : ''
+                        selectedOptionGlobal && selectedOptionGlobal.id === option.id ? 'dropdownListSelected' : ''
                     }`;
                     li.textContent = option.name;
                     

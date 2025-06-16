@@ -1,11 +1,15 @@
 @import "tailwindcss";
-
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
 @tailwind utilities;
 
+
+@theme{
+  --font-josefin: "Josefin Sans", sans-serif; 
+}
 /* Custom class dengan @apply */
 @layer utilities {
   .widgetContainer{
-    @apply p-4 md:p-8;
+    @apply p-4 md:p-8 font-josefin;
   }
 
   .widgetContainer2{
@@ -14,5 +18,85 @@
 
   .optionContainer{
     @apply mb-8;
+  }
+
+  .optionContainer2{
+    @apply flex flex-row gap-3;
+  }
+
+  .dropdownContainer{
+    @apply relative flex-1;
+  }
+
+  .dropdownButton{
+    @apply h-12 relative z-20 w-full flex items-center justify-between px-4 py-3 rounded-full shadow-xs text-left focus:outline-none transition-all;
+  }
+
+  .dropdownButtonPlaceholder{
+    @apply text-gray-700 text-base font-medium pl-4;
+  }
+
+  .dropdownButtonIcon{
+    @apply text-gray-400 transform transition-transform duration-200;
+  }
+
+  .dropdownOptionContainer{
+    @apply absolute z-10 w-full mt-[-36px] rounded-2xl shadow-2xl overflow-hidden;
+  }
+
+  .dropdownListContainer{
+    @apply overflow-y-auto;
+  }
+
+  .widgetSearchButton{
+    @apply h-12 px-6 bg-[#08594c] hover:bg-emerald-700 text-white rounded-full transition-all duration-200 hover:font-medium;
+  }
+
+  .widgetGridContainer{
+    @apply mx-auto;
+  }
+
+  .widgetGridContent{
+    @apply flex flex-wrap justify-center gap-6 mb-16;
+  }
+
+  .widgetGridItemContainer{
+    @apply w-full md:w-[calc(50%-12px)] max-w-md;
+  }
+
+  .widgetGridItem{
+    @apply rounded-xl overflow-hidden flex shadow-lg cursor-pointer;
+  }
+
+  .widgetGridItemLeft{
+    @apply bg-gradient-to-t from-[#308377] to-[#286E63] text-white p-6 flex flex-col justify-center min-w-[180px];
+  }
+
+  .widgetGridItemText{
+    @apply !text-xl !font-bold;
+  }
+
+  .widgetGridItemRight{
+    @apply flex-grow h-[110px];
+  }
+
+  .widgetGridItemImage{
+    @apply !w-full !h-full !object-cover;
+  }
+
+  .dropdownList{
+    @apply px-8 py-2.5 text-base transition-colors duration-150;
+  }
+
+  .dropdownListDisabled{
+    @apply text-gray-400 cursor-default;
+  }
+
+  .dropdownListHover{
+    @apply hover:bg-gradient-to-b from-[#a6a6a6] to-[#cccccc] cursor-pointer;
+  }
+
+  .dropdownListSelected{
+    @apply bg-gradient-to-b from-[#a6a6a6] to-[#cccccc];
   }
 }
