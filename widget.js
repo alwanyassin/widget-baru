@@ -109,53 +109,68 @@ function initWidget() {
 
   // Masukkan HTML ke dalam container
   container.innerHTML = `
-    <div class="widgetContainer">
-      <div class="widgetContainer2">
-        <div class="optionContainer">
-          <div class="optionContainer2">
-            <div class="dropdownContainer">
-              <div class="relative" id="selectContainer">
-                                <!-- Trigger Button -->
-                                <button
-                                    id="selectButton"
-                                    class="dropdownButton gradient-bg"
-                                >
-                                    <span id="selectedValue" class="dropdownButtonPlaceholder">${data.selectPlaceholder}</span>
-                                    <svg id="dropdownIcon" class="dropdownButtonIcon"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    xmlns:xlink="http://www.w3.org/1999/xlink"
-                                    width="24.5px" height="12.5px">
-                                    <path fill-rule="evenodd"  stroke="rgb(10, 10, 10)" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" fill="none"
-                                    d="M1.529,1.475 L12.271,10.427 L23.013,1.475 "/>
-                                    </svg>
-                                </button>
-                                
-                                <!-- Dropdown Options -->
-                                <div
-                                    id="dropdownMenu"
-                                    class="dropdownOptionContainer gradient-bg hidden"
-                                >
-                                    <!-- Options List -->
-                                    <ul id="optionsList" class="dropdownListContainer scrollbar-custom">
-                                        <!-- Options will be inserted here by JavaScript -->
-                                    </ul>
-                                </div>
-                            </div>
+      <!-- FAQ Widget -->
+    <div class="widgetFAQButtonContainer">
+        <!-- Widget Button -->
+        <button id="faqButton" class="widgetFAQButton">
+            <i class="fas fa-question-circle widgetFAQIcon"></i>
+            <span class="widgetFAQText">FAQ</span>
+        </button>
+    </div>
+    <div id="faqModal" class="hidden fixed inset-0 z-50 flex widgetFAQModal">
+      <button id="closeModal" class="widgetFAQModalCloseButton">
+        <i class="fas fa-times widgetFAQModalCloseButtonText"></i>
+      </button>
+      <div class="widgetContainer">
+        <div class="widgetContainer2">
+          <div class="optionContainer">
+            <div class="optionContainer2">
+              <div class="dropdownContainer">
+                <div class="relative" id="selectContainer">
+                                  <!-- Trigger Button -->
+                                  <button
+                                      id="selectButton"
+                                      class="dropdownButton gradient-bg"
+                                  >
+                                      <span id="selectedValue" class="dropdownButtonPlaceholder">${data.selectPlaceholder}</span>
+                                      <svg id="dropdownIcon" class="dropdownButtonIcon"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      xmlns:xlink="http://www.w3.org/1999/xlink"
+                                      width="24.5px" height="12.5px">
+                                      <path fill-rule="evenodd"  stroke="rgb(10, 10, 10)" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" fill="none"
+                                      d="M1.529,1.475 L12.271,10.427 L23.013,1.475 "/>
+                                      </svg>
+                                  </button>
+                                  
+                                  <!-- Dropdown Options -->
+                                  <div
+                                      id="dropdownMenu"
+                                      class="dropdownOptionContainer gradient-bg hidden"
+                                  >
+                                      <!-- Options List -->
+                                      <ul id="optionsList" class="dropdownListContainer scrollbar-custom">
+                                          <!-- Options will be inserted here by JavaScript -->
+                                      </ul>
+                                  </div>
+                              </div>
+              </div>
+              <button id="go" class="widgetSearchButton">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32px" height="32px" viewBox="0 0 24 24" version="1.1">
+                  <g id="surface1">
+                  <path style="fill:none;stroke-width:36;stroke-linecap:round;stroke-linejoin:miter;stroke:#fff;stroke-opacity:1;stroke-miterlimit:4;" d="M 280.011393 278.017578 C 339.02832 217.884115 338.310547 121.383464 278.496094 62.127279 C 218.681641 2.871094 122.18099 3.110352 62.605794 62.605794 C 3.110352 122.18099 2.871094 218.681641 62.127279 278.496094 C 121.383464 338.310547 217.884115 339.02832 278.017578 280.011393 L 447.970378 449.964193 M 356.972656 332.967122 L 467.03125 443.025716 L 441.031901 469.025065 L 330.973307 358.966471 " transform="matrix(0.0489796,0,0,0.0489796,0,0)"/>
+                  </g>
+                </svg>
+              </button>
             </div>
-            <button id="go" class="widgetSearchButton">
-              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32px" height="32px" viewBox="0 0 24 24" version="1.1">
-                <g id="surface1">
-                <path style="fill:none;stroke-width:36;stroke-linecap:round;stroke-linejoin:miter;stroke:#fff;stroke-opacity:1;stroke-miterlimit:4;" d="M 280.011393 278.017578 C 339.02832 217.884115 338.310547 121.383464 278.496094 62.127279 C 218.681641 2.871094 122.18099 3.110352 62.605794 62.605794 C 3.110352 122.18099 2.871094 218.681641 62.127279 278.496094 C 121.383464 338.310547 217.884115 339.02832 278.017578 280.011393 L 447.970378 449.964193 M 356.972656 332.967122 L 467.03125 443.025716 L 441.031901 469.025065 L 330.973307 358.966471 " transform="matrix(0.0489796,0,0,0.0489796,0,0)"/>
-                </g>
-              </svg>
-            </button>
           </div>
-        </div>
-        <div id="grid-container" class="widgetGridContainer hidden">
-          <div class="widgetGridContent" id="grid-content"></div>
+          <div id="grid-container" class="widgetGridContainer hidden">
+            <div class="widgetGridContent" id="grid-content"></div>
+          </div>
         </div>
       </div>
     </div>
+    <!-- Backdrop Blur -->
+    <div id="backdropBlur" class="hidden fixed widgetBackgroundBlur"></div>
   `;
 
   // Tambahkan event
@@ -348,3 +363,42 @@ initWidget();
             // Initial render
             renderOptions();
         });
+
+        const faqButton = document.getElementById('faqButton');
+        const faqModal = document.getElementById('faqModal');
+        const backdropBlur = document.getElementById('backdropBlur');
+        const closeModal = document.getElementById('closeModal');
+
+        function toggleModal() {
+            const isHidden = faqModal.classList.contains('hidden');
+            
+            if (isHidden) {
+                faqModal.classList.remove('hidden');
+                backdropBlur.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+                
+                // Animasi muncul
+                setTimeout(() => {
+                    faqModal.classList.add('opacity-100', 'scale-100');
+                    faqModal.classList.remove('opacity-0', 'scale-95');
+                }, 10);
+            } else {
+                // Animasi menghilang
+                faqModal.classList.remove('opacity-100', 'scale-100');
+                faqModal.classList.add('opacity-0', 'scale-95');
+                
+                setTimeout(() => {
+                    faqModal.classList.add('hidden');
+                    backdropBlur.classList.add('hidden');
+                    document.body.style.overflow = '';
+                }, 300);
+            }
+        }
+
+        // Inisialisasi animasi
+        faqModal.classList.add('transition-all', 'duration-300', 'ease-out', 'opacity-0', 'scale-95');
+
+        faqButton.addEventListener('click', toggleModal);
+        closeModal.addEventListener('click', toggleModal);
+        backdropBlur.addEventListener('click', toggleModal);
+
